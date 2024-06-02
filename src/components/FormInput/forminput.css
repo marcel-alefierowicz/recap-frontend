@@ -1,0 +1,29 @@
+.inputcontainer{
+    display:flex;
+    flex-direction: row;
+    width: 60%;
+    height: 50%;
+    /* background-color: #c5a276; */
+}
+.icon{
+    display:flex;
+    width: 25%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+input {
+    display: flex;
+    width: 75%;
+    height: 100%;
+    background-color: #F6EAD9;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+}
+input:focus {outline:none!important;}
+input {border:0;outline:0;}
