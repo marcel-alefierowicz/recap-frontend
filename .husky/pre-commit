@@ -1,1 +1,2 @@
 echo 'no tests to run just yet, i havent quite figured out how to configure this whole commit linter thing YET'
+npx lint-staged
