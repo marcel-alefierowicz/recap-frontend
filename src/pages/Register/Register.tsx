@@ -1,7 +1,7 @@
 import "./register.css";
 import { RiAccountPinBoxLine, RiLockPasswordLine } from "react-icons/ri";
 import { FormInput } from "../../components/FormInput";
-// import axios from "axios";
+import axios from "axios";
 import { ChangeEventHandler, useState } from "react";
 
 interface formDataTypes {
@@ -18,27 +18,31 @@ export const Register = () => {
   });
 
   const handleChange: ChangeEventHandler = (
-    // event handler for changing forms
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // const onSubmit = async (formData: formDataTypes) => {
-  //   const { username, password, rep_password } = formData;
-  //   if (rep_password === password) {
-  //     try {
-  //       await axios({
-  //         url: "localhost:3000/create-user",
-  //         method: "POST",
-  //         data: { username, password },
-  //       });
-  //     } catch (err) {
-  //       console.error("an error has occured while sending request: ", err);
-  //     }
-  //   }
-  // };
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (formData.rep_password === formData.password) {
+      try {
+        await axios({
+          url: "http://localhost:3000/create-account",
+          method: "POST",
+          data: {
+            username: formData.username,
+            password: formData.password,
+          },
+        }).then((response) => {
+          console.log(response);
+        });
+      } catch (err) {
+        console.error("an error has occured while sending request: ", err);
+      }
+    }
+  };
 
   return (
     <div className="page">
@@ -47,7 +51,7 @@ export const Register = () => {
           <p>create an account</p>
         </div>
         <div className="formdiv">
-          <form method="POST">
+          <form method="POST" onSubmit={onSubmit}>
             <div className="segment">
               <FormInput
                 name="username"
