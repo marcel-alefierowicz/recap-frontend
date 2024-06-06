@@ -1,9 +1,8 @@
 import "./register.css";
 import { RiAccountPinBoxLine, RiLockPasswordLine } from "react-icons/ri";
 import { FormInput } from "../../components/FormInput";
-import axios from "axios";
 import { ChangeEventHandler, useState } from "react";
-
+import useAuth from "../../hooks/useAuth.tsx";
 interface formDataTypes {
   username: string;
   password: string;
@@ -17,8 +16,10 @@ export const Register = () => {
     rep_password: "",
   });
 
+  const { register } = useAuth();
+
   const handleChange: ChangeEventHandler = (
-    e: React.ChangeEvent<HTMLInputElement>
+    e: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -26,22 +27,13 @@ export const Register = () => {
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.rep_password === formData.password) {
-      try {
-        await axios({
-          url: "http://localhost:3000/create-account",
-          method: "POST",
-          data: {
-            username: formData.username,
-            password: formData.password,
-          },
-        }).then((response) => {
-          console.log(response);
-        });
-      } catch (err) {
-        console.error("an error has occured while sending request: ", err);
-      }
+    const { username, password, rep_password } = formData;
+
+    if (rep_password !== password) {
+      return;
     }
+    await register(username, password);
+
   };
 
   return (
@@ -50,6 +42,7 @@ export const Register = () => {
         <div className="boxtop">
           <p>create an account</p>
         </div>
+
         <div className="formdiv">
           <form method="POST" onSubmit={onSubmit}>
             <div className="segment">

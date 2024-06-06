@@ -1,87 +1,87 @@
 .page {
-    width: 100%;
-    height: 100%;
-    background-color: #F0E7DB;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: #0f172a;
+  width: 100%;
+  height: 100%;
+  background-color: #f0e7db;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #0f172a;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 576px;
-    height: 680px;
-    background-color: #E8DCCD;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 576px;
+  height: 680px;
+  background-color: #e8dccd;
+  border-radius: 25px;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.1),
+    0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
-
 .boxtop {
-    display: flex;
-    width: 100%;
-    height: 20%;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 2.5rem;
-    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1)
+  display: flex;
+  width: 100%;
+  height: 20%;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 2.5rem;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 .formdiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 60%;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60%;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .segment {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 25%;
 }
 
 .footer {
-    display: flex;
-    width: 100%;
-    height: 20%;
-    align-items: center;
-    justify-content: center;
-    font-size: .75rem;
-    font-weight: 600;
-    text-decoration: underline;
+  display: flex;
+  width: 100%;
+  height: 20%;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .boxtop p {
-    user-select: none;
+  user-select: none;
 }
 
 .footer p {
-    user-select: none;
+  user-select: none;
 }
 
 .submit {
-    background-color: #B9A8D2;
-    border-radius: 0rem;
-    color: #F0E7DB;
-    width: 60%;
-    height: 50%;
+  background-color: #b9a8d2;
+  border-radius: 0rem;
+  color: #f0e7db;
+  width: 60%;
+  height: 50%;
 }
